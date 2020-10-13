@@ -23,7 +23,7 @@ Creates a Container which runs [maeglin89273's](https://github.com/maeglin89273)
 Using the Dockerfile, this container can be built and run on a Raspberry Pi, too! I've tested it on a Raspberry Pi 3B+.
 Simply put the Dockerfile in a directory called `triangulatorme directory as your docker-compose.yml, edit your docker-compose.yml:
 ```
-  active-github-forks:
+  triangulator:
     container_name: triangulator
     build: ./triangulator/
     restart: unless-stopped
