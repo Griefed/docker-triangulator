@@ -32,6 +32,6 @@ Simply put the Dockerfile in a directory called `triangulatorme directory as you
 ```
 Then build with:
 
-`docker-compose up -d --build triangulator
+`docker-compose up -d --build triangulator`
 
 ![Triangulator](https://i.imgur.com/GXjdzVo.png)
