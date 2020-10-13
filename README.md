@@ -34,4 +34,4 @@ Then build with:
 
 `docker-compose up -d --build triangulator
 
-![Triangulator](https://raw.githubusercontent.com/javierbyte/triangulator/gh-pages/docs/triangulator.png)
+![Triangulator](https://i.imgur.com/GXjdzVo.png)
