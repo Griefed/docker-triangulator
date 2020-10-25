@@ -8,7 +8,7 @@ https://github.com/maeglin89273/triangulator in a container!
 ![GitHub Repo stars](https://img.shields.io/github/stars/Griefed/docker-triangulator?label=GitHub%20Stars&style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Griefed/docker-triangulator?label=GitHub%20Forks&style=social)
 
-Creates a Container which runs [maeglin89273's](https://github.com/maeglin89273) [triangulator's](https://github.com/maeglin89273/triangulator), a fork of [javierbyte](https://github.com/javierbyte) [triangulator](https://github.com/javierbyte/triangulator), with [httpd:alpine](https://hub.docker.com/_/httpd) as the base image. The original can be seen on https://javier.xyz/triangulator/
+Creates a Container which runs [maeglin89273's](https://github.com/maeglin89273) [triangulator](https://github.com/maeglin89273/triangulator), a fork of [javierbyte](https://github.com/javierbyte) [triangulator](https://github.com/javierbyte/triangulator), with [httpd:alpine](https://hub.docker.com/_/httpd) as the base image. The original can be seen on https://javier.xyz/triangulator/
 
 # Deploy with docker-compose:
 ```
