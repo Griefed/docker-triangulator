@@ -24,6 +24,8 @@ readme:
     - echo $EXAMPLE_SITE_LINK
     - echo $EXAMPLE_IMAGE_LINK
     - echo $CONTAINER_PORT
+    - echo $CONTAINER_PORT2
+    - echo $BASE_IMAGE
     - echo ""
     - echo ""
     - envsubst < .gitlab/readme_template | less

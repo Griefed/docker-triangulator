@@ -1,15 +1,18 @@
-FROM httpd:alpine
+FROM lsiobase/nginx:3.12
 
-LABEL   maintainer="Griefed <griefed@griefed.de>"
-LABEL   description="Based on https://github.com/javierbyte/triangulator and the fork https://github.com/maeglin89273/triangulator \
-This project allows you to turn your pictures into triangulated / polygonized versions of them."
+LABEL maintainer="Griefed <griefed@griefed.de>"
 
-WORKDIR /usr/local/apache2/htdocs
+RUN \
+    echo "**** Install dependencies, build tools and stuff ****" && \
+    apk add --no-cache \
+        git && \
+    echo "**** Cleanup ****" && \
+    rm -rf \
+        /root/.cache \
+        /tmp/*
 
-RUN     rm -R *
+COPY root/ /
 
-RUN     apk update && apk upgrade && apk add git                        && \
-        git clone https://github.com/maeglin89273/triangulator.git .    && \
-        apk del git
+EXPOSE 80 443
 
-EXPOSE 80
+VOLUME /config

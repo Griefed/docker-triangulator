@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+if [ ! -a /config/www/trinagulator.lock ]; then
+  echo "**** Installing Triangulator  ****"
+  rm -Rf /config/www/*
+  git clone \
+    https://github.com/maeglin89273/triangulator.git \
+      /config/www
+  touch /config/www/triangulator.lock
+  chown -R abc:abc \
+    /config/www
+else
+  echo "**** Triangulator already installed, skipping  ****"
+fi

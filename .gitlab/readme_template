@@ -15,9 +15,9 @@ $DESCRIPTION
 
 ---
 
-Creates a Container which runs [CREATOR_USERNAME's](https://github.com/$CREATOR_USERNAME) [$CREATOR_REPONAME](https://github.com/$CREATOR_USERNAME/$CREATOR_REPONAME), with [lsiobase/alpine](https://hub.docker.com/r/lsiobase/alpine) as the base image, as seen on $EXAMPLE_SITE_LINK.
+Creates a Container which runs [CREATOR_USERNAME's](https://github.com/$CREATOR_USERNAME) [$CREATOR_REPONAME](https://github.com/$CREATOR_USERNAME/$CREATOR_REPONAME), with [lsiobase/$BASE_IMAGE](https://hub.docker.com/r/lsiobase/$BASE_IMAGE) as the base image, as seen on $EXAMPLE_SITE_LINK.
 
-The lasiobase/alpine image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
+The lasiobase/$BASE_IMAGE image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
 Using this image allows us to use the same user/group ids in the container as on the host, making file transfers much easier
 
 ## Deployment
@@ -39,7 +39,8 @@ services:
       - PUID=1000  # User ID
       - PGID=1000  # Group ID
     ports:
-      - 8080:$COTNAINER_PORT
+      - 80:$COTNAINER_PORT
+      - $CONTAINER_PORT2
 ```
 
 ## Configuration
@@ -83,7 +84,6 @@ services:
     restart: unless-stopped
     volumes:
       - ./path/to/config/files:/config
-      - ./path/to/data:/data
     environment:
       - TZ=Europe/Berlin
       - PUID=1000  # User ID
