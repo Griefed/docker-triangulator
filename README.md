@@ -1,15 +1,16 @@
-[![docker-triangulator](https://i.griefed.de/images/2020/11/07/triangulator.png)](https://github.com//)
+[![docker-triangulator](https://i.griefed.de/images/2020/11/07/triangulator.png)](https://github.com/maeglin89273/triangulator)
 
 ---
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/griefed/?style=flat-square)](https://hub.docker.com/repository/docker/griefed/)
-[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/griefed/?label=Image%20size&sort=date&style=flat-square)](https://hub.docker.com/repository/docker/griefed/)
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/griefed/?label=Docker%20build&style=flat-square)](https://hub.docker.com/repository/docker/griefed/)
-[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/griefed/?label=Docker%20build&style=flat-square)](https://hub.docker.com/repository/docker/griefed/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/griefed/triangulator?style=flat-square)](https://hub.docker.com/repository/docker/griefed/triangulator)
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/griefed/triangulator?label=Image%20size&sort=date&style=flat-square)](https://hub.docker.com/repository/docker/griefed/triangulator)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/griefed/triangulator?label=Docker%20build&style=flat-square)](https://hub.docker.com/repository/docker/griefed/triangulator)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/griefed/triangulator?label=Docker%20build&style=flat-square)](https://hub.docker.com/repository/docker/griefed/triangulator)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Griefed/docker-triangulator?label=GitHub%20Stars&style=social)](https://github.com/Griefed/docker-triangulator)
 [![GitHub forks](https://img.shields.io/github/forks/Griefed/docker-triangulator?label=GitHub%20Forks&style=social)](https://github.com/Griefed/docker-triangulator)
 
 docker-triangulator
+
 Delaunay triangulation image generator.
 
 [![triangulator](https://i.griefed.de/images/2020/11/07/image.png)](https://github.com/maeglin89273/triangulator)
@@ -19,7 +20,7 @@ Delaunay triangulation image generator.
 Creates a Container which runs [maeglin89273's](https://github.com/maeglin89273) [triangulator](https://github.com/maeglin89273/triangulator), with [lsiobase/nginx](https://hub.docker.com/r/lsiobase/nginx) as the base image, as seen on https://javier.xyz/triangulator/.
 
 The lasiobase/nginx image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
-Using this image allows us to use the same user/group ids in the container as on the host, making file transfers much easier
+Using this image allows us to use the same user/group ids in the container as on the host, making file transfers much easier.
 
 ## Deployment
 
@@ -34,7 +35,6 @@ services:
     restart: unless-stopped
     volumes:
       - ./path/to/config:/config
-      - ./path/to/data:/data
     environment:
       - TZ=Europe/Berlin
       - PUID=1000  # User ID
@@ -89,6 +89,7 @@ services:
       - PGID=1000  # Group ID
     ports:
       - 8080:80
+      - 443:443
 ```
 
 1. Clone the repository: `git clone https://github.com/Griefed/docker-triangulator.git ./docker-triangulator`

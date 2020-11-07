@@ -35,7 +35,6 @@ services:
     restart: unless-stopped
     volumes:
       - ./path/to/config:/config
-      - ./path/to/data:/data
     environment:
       - TZ=Europe/Berlin
       - PUID=1000  # User ID
