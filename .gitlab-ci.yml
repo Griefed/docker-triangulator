@@ -43,8 +43,8 @@ build:
 publish:
   stage: publish
   script:
-    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD $DOCKERHUB_REGISTRY
-    - docker build --tag $DOCKERHUB_USER/triangulator:latest .
-    - docker push griefed/triangulator:latest
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $DOCKER_REGISTRY
+    - docker build --tag $DOCKER_USER/triangulator:latest .
+    - docker push $DOCKER_USER/triangulator:latest
     - docker system prune --all --force
 
