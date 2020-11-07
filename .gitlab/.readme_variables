@@ -11,4 +11,4 @@ export EXAMPLE_SITE_LINK='https://javier.xyz/triangulator/'
 export EXAMPLE_IMAGE_LINK='https://i.griefed.de/images/2020/11/07/image.png'
 export CONTAINER_PORT='80'
 export CONTAINER_PORT2='443:443'
-export BASE_IMAGE=nginx
+export BASE_IMAGE='nginx'
