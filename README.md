@@ -1,4 +1,4 @@
-[![docker-triangulator](https://i.griefed.de/images/2020/11/07/triangulator.png)](https://github.com/maeglin89273/triangulator)
+[![docker-triangulator](img/docker-triangulator_header.png)](https://github.com/maeglin89273/triangulator)
 
 ---
 
@@ -13,7 +13,7 @@ docker-triangulator
 
 Delaunay triangulation image generator.
 
-[![triangulator](https://i.griefed.de/images/2020/11/07/image.png)](https://github.com/maeglin89273/triangulator)
+[![triangulator](img/docker-triangulator_screenshot.png)](https://github.com/maeglin89273/triangulator)
 
 ---
 
@@ -29,9 +29,9 @@ Using this image allows us to use the same user/group ids in the container as on
 ```docker-compose.yml
 version: '3.6'
 services:
-  docker-triangulator:
-    container_name: docker-triangulator
-    image: griefed/docker-triangulator
+  triangulator:
+    container_name: triangulator
+    image: griefed/triangulator
     restart: unless-stopped
     volumes:
       - ./path/to/config:/config
@@ -43,6 +43,11 @@ services:
       - 80:80
       - 443:443
 ```
+### Raspberry Pi
+
+To run this container on a Raspberry Pi, use the `arm`-tag. I've tested it on a Raspberry Pi 3B.
+
+`griefed/triangulator:arm`
 
 ## Configuration
 
@@ -67,18 +72,17 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
     uid=1000(dockeruser) gid=1000(dockergroup) groups=1000(dockergroup)
 ```
 
-### Raspberry Pi & building the image yourself
+### Building the image yourself
 
-Using the [Dockerfile](https://github.com/Griefed/docker-triangulator/Dockerfile), this container can be built and run on a Raspberry Pi.
-I've tested it on a Raspberry Pi 3B.
+Use the [Dockerfile](https://github.com/Griefed/docker-triangulator/Dockerfile) to build the image yourself, in case you want to make any changes to it
 
 #### docker-compose.yml
 
 ```docker-compose.yml
 version: '3.6'
 services:
-  docker-triangulator:
-    container_name: docker-triangulator
+  triangulator:
+    container_name: triangulator
     build: ./docker-triangulator/
     restart: unless-stopped
     volumes:
@@ -94,7 +98,7 @@ services:
 
 1. Clone the repository: `git clone https://github.com/Griefed/docker-triangulator.git ./docker-triangulator`
 1. Prepare docker-compose.yml file as seen above
-1. `docker-compose up -d --build docker-triangulator`
+1. `docker-compose up -d --build triangulator`
 1. Visit IP.ADDRESS.OF.HOST:8080
 1. ???
 1. Profit!

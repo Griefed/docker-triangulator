@@ -1,4 +1,4 @@
-[![$GITHUB_REPONAME]($LOGO_IMAGE_LINK)](https://github.com/$CREATOR_USERNAME/$CREATOR_REPONAME)
+[![$GITHUB_REPONAME](img/$GITHUB_REPONAME_header.png)](https://github.com/$CREATOR_USERNAME/$CREATOR_REPONAME)
 
 ---
 
@@ -13,7 +13,7 @@ $GITHUB_REPONAME
 
 $DESCRIPTION
 
-[![$CREATOR_REPONAME]($EXAMPLE_IMAGE_LINK)](https://github.com/$CREATOR_USERNAME/$CREATOR_REPONAME)
+[![$CREATOR_REPONAME](img/$GITHUB_REPONAME_screenshot.png)](https://github.com/$CREATOR_USERNAME/$CREATOR_REPONAME)
 
 ---
 
@@ -29,9 +29,9 @@ Using this image allows us to use the same user/group ids in the container as on
 ```docker-compose.yml
 version: '3.6'
 services:
-  $GITHUB_REPONAME:
-    container_name: $GITHUB_REPONAME
-    image: griefed/$GITHUB_REPONAME
+  $DOCKERHUB_REPONAME:
+    container_name: $DOCKERHUB_REPONAME
+    image: griefed/$DOCKERHUB_REPONAME
     restart: unless-stopped
     volumes:
       - ./path/to/config:/config
@@ -43,6 +43,12 @@ services:
       - 80:$CONTAINER_PORT
       - $CONTAINER_PORT2
 ```
+
+## Raspberry Pi
+
+To run this container on a Raspberry Pi, use the `arm`-tag. I've tested it on a Raspberry Pi 3B.
+
+`griefed/$DOCKERHUB_REPONAME:arm`
 
 ## Configuration
 
@@ -69,18 +75,17 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
     uid=1000(dockeruser) gid=1000(dockergroup) groups=1000(dockergroup)
 ```
 
-### Raspberry Pi & building the image yourself
+### Building the image yourself
 
-Using the [Dockerfile](https://github.com/Griefed/$GITHUB_REPONAME/Dockerfile), this container can be built and run on a Raspberry Pi.
-I've tested it on a Raspberry Pi 3B.
+Use the [Dockerfile](https://github.com/Griefed/$GITHUB_REPONAME/Dockerfile) to build the image yourself, in case you want to make any changes to it
 
 #### docker-compose.yml
 
 ```docker-compose.yml
 version: '3.6'
 services:
-  $GITHUB_REPONAME:
-    container_name: $GITHUB_REPONAME
+  $DOCKERHUB_REPONAME:
+    container_name: $DOCKERHUB_REPONAME
     build: ./$GITHUB_REPONAME/
     restart: unless-stopped
     volumes:
@@ -96,7 +101,7 @@ services:
 
 1. Clone the repository: `git clone https://github.com/Griefed/$GITHUB_REPONAME.git ./$GITHUB_REPONAME`
 1. Prepare docker-compose.yml file as seen above
-1. `docker-compose up -d --build $GITHUB_REPONAME`
+1. `docker-compose up -d --build $DOCKERHUB_REPONAME`
 1. Visit IP.ADDRESS.OF.HOST:8080
 1. ???
 1. Profit!
