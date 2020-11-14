@@ -19,8 +19,8 @@ Delaunay triangulation image generator.
 
 Creates a Container which runs [maeglin89273's](https://github.com/maeglin89273) [triangulator](https://github.com/maeglin89273/triangulator), with [lsiobase/nginx](https://hub.docker.com/r/lsiobase/nginx) as the base image, as seen on https://javier.xyz/triangulator/.
 
-The lasiobase/nginx image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
-Using this image allows us to use the same user/group ids in the container as on the host, making file transfers much easier.
+The lsiobase/nginx image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
+Using this image allows us to use the same user/group ids in the container as on the host, making file transfers much easier
 
 ## Deployment
 
@@ -43,7 +43,8 @@ services:
       - 80:80
       - 443:443
 ```
-### Raspberry Pi
+
+## Raspberry Pi
 
 To run this container on a Raspberry Pi, use the `arm`-tag. I've tested it on a Raspberry Pi 3B.
 
@@ -64,7 +65,9 @@ ports | The port where the service will be available at.
 ## User / Group Identifiers
 
 When using volumes, permissions issues can arise between the host OS and the container. [Linuxserver.io](https://www.linuxserver.io/) avoids this issue by allowing you to specify the user `PUID` and group `PGID`.
+
 Ensure any volume directories on the host are owned by the same user you specify and any permissions issues will vanish like magic.
+
 In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as below:
 
 ```
