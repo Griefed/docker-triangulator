@@ -1,4 +1,4 @@
-[![docker-triangulator](img/docker-triangulator_header.png)](https://github.com/Griefed/docker-triangulator)
+[![docker-triangulator](https://i.griefed.de/images/2020/11/18/docker-triangulator_header.png)](https://github.com/Griefed/docker-triangulator)
 
 ---
 
@@ -13,7 +13,7 @@ docker-triangulator
 
 Delaunay triangulation image generator.
 
-[![triangulator](img/docker-triangulator_screenshot.png)](https://github.com/maeglin89273/triangulator)
+[![triangulator](https://i.griefed.de/images/2020/11/18/docker-triangulator_screenshot.png)](https://github.com/maeglin89273/triangulator)
 
 ---
 
