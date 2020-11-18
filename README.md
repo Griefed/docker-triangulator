@@ -1,4 +1,4 @@
-[![docker-triangulator](img/docker-triangulator_header.png)](https://github.com/maeglin89273/triangulator)
+[![docker-triangulator](img/docker-triangulator_header.png)](https://github.com/Griefed/docker-triangulator)
 
 ---
 
@@ -19,7 +19,7 @@ Delaunay triangulation image generator.
 
 Creates a Container which runs [maeglin89273's](https://github.com/maeglin89273) [triangulator](https://github.com/maeglin89273/triangulator), with [lsiobase/nginx](https://hub.docker.com/r/lsiobase/nginx) as the base image, as seen on https://javier.xyz/triangulator/.
 
-The lsiobase/nginx image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
+The [lsiobase/nginx](https://hub.docker.com/r/lsiobase/nginx) image is a custom base image built with [Alpine linux](https://alpinelinux.org/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
 Using this image allows us to use the same user/group ids in the container as on the host, making file transfers much easier
 
 ## Deployment
